@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractional Knapsack Problem</title>
+    <link rel="stylesheet" href="frknapsack.css">
+</head>
+<body>
+    <div class="info">
+        <a href="frknap.html"><button>Info</button></a>
+    </div>
+    <div class="container">
+        <h1>Fractional Knapsack Problem</h1>
+        <div class="input-section">
+            <label for="name">Item Name:</label>
+            <input type="text" id="name" placeholder="e.g., A">
+            
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" placeholder="e.g., 1">
+            
+            <label for="value">Value:</label>
+            <input type="number" id="value" placeholder="e.g., 2">
+            
+            <button id="addItem">Add Item</button>
+        </div>
+
+        <div id="itemList" class="item-list"></div>
+
+        <label for="capacity">Capacity:</label>
+        <input type="number" id="capacity" placeholder="Enter capacity">
+
+        <button id="calculate">Calculate Maximum Value</button>
+
+        <div id="output" class="output-section"></div>
+        <div id="selectedItems" class="output-section"></div> <!-- Section for selected items -->
+    </div>
+    <script src="frknapsack.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 7em;
+            padding: 2rem;
+            box-sizing: border-box;
+            border: 4px solid black;
+        }
+
+        body p{
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pseudocode -</h1>
+
+    <p>
+        Initialize an empty list called items
+        <br>
+When the "Add Item" button is clicked: <br>
+    Get the item name from the input field <br>
+    Get the item weight from the input field and convert it to a number <br>
+    Get the item value from the input field and convert it to a number <br>
+ <br>
+    If name is not empty AND weight > 0 AND value > 0: <br>
+        Create an object with name, weight, value, and ratio (value / weight) <br>
+        Add the object to the items list <br>
+        Call displayItems() <br>
+        Call clearInputs() <br>
+    Else: <br>
+        Show an alert: "Please enter valid item details." <br>
+ <br>
+When the "Calculate" button is clicked: <br>
+    Get the capacity from the input field and convert it to a number <br>
+    If capacity > 0: <br>
+        Call fractionalKnapsack() with items and capacity <br>
+        Display the maximum value and selected items in the output area <br>
+    Else: <br>
+        Show an alert: "Please enter a valid capacity." <br>
+ <br>
+Function displayItems: <br>
+    Clear the item list display <br>
+ <br>
+    For each item in items: <br>
+        Create a new div displaying the item's name, weight, and value <br>
+        Add a delete button with an index attribute <br>
+        Append the div to the item list display <br>
+ <br>
+    For each delete button: <br>
+        When clicked: <br>
+            Get the index from the button <br>
+            Remove the item at that index from the items list <br>
+            Call displayItems() to update the display <br>
+ <br>
+Function clearInputs: <br>
+    Set the values of name, weight, and value input fields to empty strings <br>
+ <br>
+Function fractionalKnapsack(items, capacity): <br>
+    Sort items by value-to-weight ratio in descending order <br>
+ <br>
+    Initialize totalValue to 0 <br>
+    Initialize remainingCapacity to capacity <br>
+    Initialize an empty list called selectedItems <br>
+ <br>
+    For each item in items: <br>
+        If remainingCapacity >= item.weight: <br>
+            Add item.value to totalValue <br>
+            Decrease remainingCapacity by item.weight <br>
+            Add item.name to selectedItems <br>
+        Else: <br>
+            Calculate the fraction of the item that fits <br>
+            Add value of the fraction to totalValue <br>
+            Add item.name with the fraction to selectedItems <br>
+            Break the loop <br>
+ <br>
+    Return an object with maxValue and selectedItems 
+  <br>
+  <br>
+    </p>
+    <h1>Time Complexity-</h1>
+    <p>
+        The dominant factor is the sorting step. Therefore, the overall time complexity of the fractional knapsack algorithm is:<b> O(nlogn)</b>
+    </p>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 7em;
+            padding: 2rem;
+            box-sizing: border-box;
+            border: 4px solid black;
+        }
+
+        body p{
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pseudocode -</h1>
+    <p>
+        Initialize an empty list called items<br>
+Get references to the itemList, outputSection, and selectedItemsSection elements<br>
+<br>
+When the "Add Item" button is clicked:<br>
+    Get the name from the input field<br>
+    Get the weight from the input field and convert it to an integer<br>
+    Get the value from the input field and convert it to an integer<br>
+<br>
+    If name is not empty AND weight > 0 AND value > 0:<br>
+        Create an object with name, weight, and value<br>
+        Add the object to the items list<br>
+        Call displayItems()<br>
+        <br>
+        Clear the input fields for name, weight, and value<br>
+<br>
+When the "Calculate" button is clicked:<br>
+    Get the capacity from the input field and convert it to an integer<br>
+    Call knapsack() with items and capacity<br>
+    Call displayResults() with the selected items returned from knapsack()<br>
+<br>
+Function displayItems:<br>
+    Clear the itemList display<br>
+    For each item in items with its index:<br>
+        Create a new div displaying item's name, weight, and value<br>
+        <br>
+        Create a delete button<br>
+        Set its text to "Delete"<br>
+        Add an event listener to call deleteItem() with the current index when clicked<br>
+        <br>
+        Append the delete button to the div<br>
+        Append the div to itemList<br>
+<br>
+Function deleteItem(index):<br>
+    Remove the item at the given index from items<br>
+    Call displayItems() to update the display<br>
+<br>
+Function knapsack(items, capacity):<br>
+    Let n be the number of items<br>
+    Create a 2D array dp with dimensions (n+1) x (capacity+1) initialized to 0<br>
+    <br>
+    For i from 1 to n:<br>
+        For w from 0 to capacity:<br>
+            If the weight of the current item is less than or equal to w:<br>
+                Update dp[i][w] with the maximum of:<br>
+                    dp[i-1][w] (not taking the item) OR
+                    dp[i-1][w - weight of current item] + value of current item (taking the item)<br>
+            Else:<br>
+                Set dp[i][w] to dp[i-1][w] (not taking the item)<br>
+<br>
+    Initialize w to capacity<br>
+    Create an empty list called selectedItems<br>
+<br>
+    For i from n down to 1:<br>
+        If dp[i][w] is not equal to dp[i-1][w]:<br>
+            Add the current item to selectedItems<br>
+            Decrease w by the weight of the current item<br>
+<br>
+    Return selectedItems<br>
+<br>
+Function displayResults(selectedItems):<br>
+    Clear the selectedItemsSection and outputSection displays
+<br>
+    If selectedItems is empty:
+        Set outputSection text to "No items selected."<br>
+        Return<br>
+<br>
+    Initialize totalValue to 0<br>
+<br>
+    For each item in selectedItems:<br>
+        Create a new div displaying item's name, weight, and value<br>
+        Append the div to selectedItemsSection<br>
+        Add item's value to totalValue<br>
+<br>
+    Set outputSection text to "Total Value: " followed by totalValue<br>
+<br>
+    </p>
+    <h1>Time Complexity-</h1>
+    <p>
+        the overall time complexity for the 0/1 Knapsack problem using dynamic programming is:
+
+        <b>𝑂(𝑛×𝑊)</b>
+    </p>
+</body>
+</html>

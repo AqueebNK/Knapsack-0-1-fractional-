@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FF3CAC;
+background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content h1 {
+    transition: 0.5s;
+    text-shadow: 2px 2px 5px rgb(241, 6, 6);
+}
+
+.content h1:hover {
+    transform: scale(1.1);
+    margin-left: 1em;
+}
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: -4px;
+}
+
+ul li {
+    margin: 20px ;
+}
+
+ul li a {
+    margin-right: 0;
+    text-decoration: solid;
+    font-style: normal;
+   font-weight: 500;
+    color: white;
+    font-size: 25px;
+    text-shadow: 2px 2px 5px rgb(241, 6, 6);
+}
+
+
+ul li a:hover::after{
+    color: rgb(240, 238, 234);
+    content: '';
+    height: 3px;
+    width: 100%;
+    background-color: rgb(238, 234, 225);
+    display: block;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+
+.navl::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background-color: rgb(171, 134, 41);
+    display: block;
+    border-radius: 4px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 55px;
+    margin-right: 155px;
+    padding-top: 22px;
+}
+
+.header button {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    background: transparent;
+    font-size: 20px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-weight: 500;
+   overflow: hidden;
+}
+
+.header button:hover {
+    background-color:rgb(171, 134, 41);
+    color: whitesmoke;
+}    
+
+.content .btn:hover {
+    background-color:rgb(171, 134, 41);
+    color: whitesmoke;
+}
+
+.header h1 {
+    color: white;
+    margin: 10px;
+    font-size: 40px;
+}
+
+.headerig .cof:first-letter{
+    font-size: 45px;
+    color: rgb(147, 233, 236);
+}
+
+.headercontent {
+    position: absolute;
+    top: 22%;
+    left: 35%;
+    height: 59vh;
+    width: 28vw;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.188);
+    border-radius: 15px;
+    border: 1px solid #fff;
+}
+
+.headercontent h1 {
+    margin-top: 20px;
+    color: black;
+}
+
+.headercontent .input {
+    margin-left: 40px;
+    border-bottom: 2px solid #232020;
+    width: 80%;
+    padding-top: 25px;
+    margin-top: 35px;
+}
+
+.headercontent .input input {
+
+    width: 100%;
+    background: rgba(255, 255, 255, 0.0);
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+}
+
+.content {
+    color: whitesmoke;
+    font-size: 20px;
+    position: absolute;
+    left: 70px;
+    top: 40vh;
+}
+
+.content h1 {
+    font-size: 2.5em;
+}
+
+.content p {
+    padding-top: 20px;
+}
+
+
+.content .knc {
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 2em;
+    height: 4em;
+    width: 8em;
+    background-color: white;
+    color: #5d86e4;
+    border: 1px solid black;
+    border-radius: 88px;
+}
+
+.content .frac {
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    margin-left: 4em;
+    margin-top: 2em;
+    height: 4em;
+    width: 8em;
+    background: transparent;
+    color: antiquewhite;
+    border: 2px solid antiquewhite;
+    border-radius: 88px;
+}
+
+.frac:hover {
+    background-color: white;
+    color: #5d86e4;
+
+}
+
+.knc:hover {
+    background: transparent;
+    color: antiquewhite;
+    border: 2px solid antiquewhite;
+}
+
+.headergg {
+    border-top: 1px solid whitesmoke;
+    background-color: black;
+    color: white;
+}
+
+.headergg .ca {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.bag {
+
+    object-fit: cover;
+    position: absolute;
+    right: -390px;
+    top: -3em;
+
+}
+
+.bag img {
+    border: 2px solid rgb(61, 61, 255);
+    border-radius: 98px;
+    height: 46vh;
+    width: 20vw;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    transition: 0.8s;
+}
+
+.bag img:hover {
+    transform: scale(1.1);
+}
+
+.cir {
+    position: absolute;
+    right: -480px;
+    top: -4em;
+    height: 53vh;
+    width: 30vw;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 4px 4px solid rgb(24, 51, 171);
+}
+
+
+
